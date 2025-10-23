@@ -156,13 +156,31 @@
 
     display: flex;
     justify-content: space-around;
+
+    z-index: 0;
 }
 
-.nuage{
-min-height: 50%;
-width: 100%;
+.nuage {
+  width: 200px;      
+  min-height: auto;      
+  object-fit: contain; /*pour ne pas déformer l'image*/
+  display: block;
 
-background-color: rgb(255, 0, 140);
+  position: relative;
+}
+
+#nuageGauche{
+    top: 200px;
+    left: -6px;
+
+    width: 150px;
+}
+
+#nuageDroite{
+    top: -10px;
+    left: -80px;
+    width: 300px;
+
 }
 
 #terre__bottom{
@@ -180,16 +198,35 @@ background-color: rgb(255, 0, 140);
 
 #Terre3D{
     min-height: 100%;
-    width: 100%;
+    width: 30%;
 
-    margin: 30vh;
-    margin-top: 60vh;
+    margin-top: 50vh;
 }
 
+.infoTrajet{
+    display: none;
+}
+
+.trajet__avion {
+    position: relative;
+    background-color: brown;
+    min-height: 20px;
+    width: 20px;
+}
+
+#new-york{
+    top : 85px;
+    left: -405px;
+    z-index: 2;
+
+}
+
+#paris{
+    top : 72px;
+    left: -222px;
 
 
-
-
+}
 
 
 
@@ -229,3 +266,10 @@ background-color: rgb(255, 0, 140);
 /* Animation */
 
 /* Responsive */
+/*
+@media (max-width:800px){
+    .maison{
+        width: 100px;
+    }
+}
+*/

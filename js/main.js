@@ -50,10 +50,7 @@ let tl = gsap.timeline({
 
 })
 
-tl.to('.patte',{x:100, stagger: 0.1,})
-.to('.patte',{y:100, stagger: 0.1,})
-.to('.patte',{x:-100, stagger: 0.1,})
-.to('.patte',{y:0, opacity : 0, stagger: 0.1,}),         //on peut gére l'opacité aussi.
+     //on peut gére l'opacité aussi.
 
 
 
@@ -89,3 +86,61 @@ Draggable.create("#altitude",{
 
 })
 
+
+/*Responsive */
+
+
+let mm = gsap.matchMedia();
+
+mm.add({
+  isMobile:"(max-width:799px)",
+  isDesktop:"(min-width:800px)",
+}, (context)=> {
+    let { isMobile, isDesktop } = context.conditions;
+
+    tl.to('.patte',{x: isMobile ? 30 : 100, stagger: 0.1,})
+    .to('.patte',{y: isMobile ? 30 : 100, stagger: 0.1,})
+    .to('.patte',{x: isMobile ? -30 : -100, stagger: 0.1,})
+    .to('.patte',{y: isMobile ? -30 : 0, opacity : 0, stagger: 0.1,})   
+
+})
+
+/*Pin de la section 3 */
+
+let pin3 = ScrollTrigger.create({
+  trigger: "#section3",
+  pin: true,
+  start: "top top",
+  end: "+=800",
+});
+
+
+
+
+
+/*Mouvement du trajet au scroll */
+
+gsap.to("#new-york", {
+
+  scrollTrigger:{
+    trigger: '#section3',
+    start: 'top top%',
+    end: '+=500',
+    //markers : true,
+    id:"trajet NY-Paris",
+    toggleActions:'play none reverse reset',
+    },
+
+  motionPath:{
+      alignOrigin: [0.1, 0.5],
+      path: 'M287.953 764.894C167.619 723.06 -55.4475 591.694 14.9525 400.894C89.4525 253.394 179.953 212.394 233.953 176.894C380.453 117.394 264.453 -18.1063 214.953 3.89364C156.782 29.7473 154.548 114.217 201.453 147.394C221.953 161.894 329.453 176.894 438.453 176.894C547.453 176.894 756.453 83.3935 771.453 66.8935C786.453 50.3935 906.047 7.33671 968.453 3.89364C1185.95 -8.10647 984.953 553.393 599.953 744.393', 
+      align: "#new-york",
+      autoRotate : true,
+    },
+})
+
+/*Scroll horizotal : apogé =>déclin */
+
+
+
+/*Pin section 4*/
