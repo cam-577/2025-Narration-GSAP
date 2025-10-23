@@ -96,7 +96,7 @@
 #section2{
     min-height: 100vh;
     width: 100vw;
-    /*background-image: url(assets/img/blueprint.svg);*/
+    background-image: url(assets/img/blueprint.svg);
     background-size: cover;
 
     display: flex;
@@ -107,6 +107,17 @@
 
 
 /* Section 3 */
+
+#section3-4{
+    width: 200vw;
+    min-height: 100vh;
+
+    display: flex;
+}
+
+
+
+
 
 #section3{
     min-height: 100vh;
@@ -191,7 +202,6 @@
     justify-content: center;
     align-items: center;
 
-    overflow-y: hidden;
     object-fit:cover;
 
 }
@@ -209,9 +219,13 @@
 
 .trajet__avion {
     position: relative;
-    background-color: brown;
-    min-height: 20px;
-    width: 20px;
+    /*background-color: rgb(9, 152, 62);*/
+    background-image: url(assets/img/avion-dessin.png);
+    background-size: cover;
+    rotate: 90deg;
+    
+    min-height: 50px;
+    width: 50px;
 }
 
 #new-york{
@@ -238,14 +252,71 @@
     background-color:var(--c-color-bg-declin);
 
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 }
 
+.declin__diagramme{
+    min-height: 100vh;
+    width: 40%;
+    /*background-color: rgb(65, 65, 65);*/
+
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.diagramme__barre{
+
+    width: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 20px;
+    /*background-color: rgb(168, 164, 233);*/
+}
+
+#diagramme__barre1{
+    min-height:80vh;
+}
+
+#diagramme__barre2{
+    min-height: 50vh;
+}
+
+#diagramme__barre3{
+    min-height: 20vh;
+}
+
+#barre1{
+    min-height: 80%;
+    width: 100%;
+    background-color: rgb(98, 55, 216);
+}
+
+#barre2{
+    min-height: 50%;
+    width: 100%;
+    background-color: rgb(216, 55, 181);
+}
+
+#barre3{
+    min-height: 25%;
+    width: 100%;
+    background-color: rgb(216, 213, 55);
+}
 
 
-
-
+.titre{
+    min-height: auto;
+    width: 100%;
+    /*border: solid black 1px;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    }
 
 /* Section 5 */
 
@@ -259,6 +330,18 @@
     align-items: center;
 }
 
+.declin__texte{
+    min-height: 40vh;
+    width: 40vw;
+    margin-right: 50px;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 20px;
+    color: white;
+}
 
 
 
