@@ -12,6 +12,7 @@
 --c-color-bg-intro : rgb(77, 225, 255);
 --c-color-bg-plan :  rgb(5, 53, 97);
 --c-color-bg-declin : rgb(6, 25, 41);
+--c-color-writting: rgb(255, 255, 255);
 
 }
 
@@ -33,7 +34,13 @@
 
 
 
-/* Main design**************************************************** /
+/*Main design****************************************************/
+
+body{
+    overflow-x: hidden;
+}
+
+
 
 /* Section 1 */
 
@@ -43,45 +50,40 @@
     background-color: var(--c-color-bg-intro);
 
     display: flex;
-    justify-content: center;
-    align-items: stretch;
-}
-
-
-
-.patte{
-    min-height: 30px;
-    width: 30px;
-    rotate: 180deg;
-}
-
-.empreintes{
-    display: flex;
-    justify-content: center;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
+}
 
+#intro__accroche{
+    font-family:"TASA Orbiter", sans-serif;
+    color: var(--c-color-writting)
+}
+
+#intro__titre{
+    font-family: "Bebas Neue", sans-serif;
+    color: var(--c-color-writting);
+    font-size: 100px;
+
+    margin-bottom: 20px;
 }
 
 
-#empreintesMaison{
-    display: flex;
-    gap: 50px;
-    flex-direction: column;
-
+#intro__p{
+    font-family: "TASA Orbiter", sans-serif;
+    color: var(--c-color-writting);
+    margin-bottom: 10px;
 }
 
-.aDroite{
-    margin-left:40px;
+#fleche{
+    position: relative;
+    top: 20px;
+    animation: descendre 2s ease-out infinite;
 }
 
-.aGauche{
-    margin-right:40px
-}
 
-.disparition{
-    display: none;
-}
+
+
 
 
 
@@ -100,24 +102,142 @@
     background-size: cover;
 
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
 }
+
+#assemblage__texte{
+    min-height : 50vh;
+    width: 30vw;
+    /*background-color: aqua;*/
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10px;
+
+    color: var(--c-color-writting);
+}
+
+#assemblage__titre{
+    font-family: "Bebas Neue", sans-serif;
+}
+
+#assemblage__descri{
+    font-family: "TASA Orbiter", sans-serif; 
+}
+
+#assemblage__maquette{
+    min-height: 600px;
+    width: 249px;
+
+    display: flex;
+    justify-content: center;
+    justify-content: center;
+    background-image: url(assets/img/Prototype.svg);
+    background-size: contain;
+    margin:2px ;
+}
+
+
+
+#assemblage__elements{
+    min-height: 90vh;
+    width: 33vw;
+   /*background-color: brown;*/
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+
+}
+
+
+.element{
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    filter: drop-shadow(0 0 2px rgb(0, 0, 0));
+
+}
+
+#nez{
+    min-height: 101px;
+    width: 10.50px;
+    background-image: url(assets/img/nez.svg);
+    top: -13vh;
+    right: -15vw;
+}
+
+#aileDroite{
+    min-height: 89.63px;
+    width: 319px;
+    background-image: url(assets/img/aileDroite.svg);
+    top: -30vh;
+    right: 50vh;
+    rotate: 90deg;
+    
+}
+
+#aileGauche{
+    min-height: 319px;
+    width: 200.63px;
+    background-image: url(assets/img/aileGauche.svg);
+    top: 80vh;
+    right: -10vw;
+    background-color: aquamarine;
+}
+
+#derive{
+    min-height: 83px;
+    width: 88.77px;
+    background-image: url(assets/img/derive.svg);
+    rotate: 90deg;
+    top: -10vh;
+}
+
+#moteurs{
+    min-height: 191px;
+    width: 35px;
+    background-image: url(assets/img/moteurs.svg);
+    top: 10vh;
+    right: 10vw;
+    rotate: -90deg;
+    
+}
+
+#queue{
+    min-height: 105px;
+    width: 250.77px;
+    background-image: url(assets/img/queue.svg);
+    top: 40vh;
+    right: 15vw;
+    rotate: -90deg;
+}
+
+#fuselage{
+    min-height: 410px;
+    width: 50px;
+    background-image: url(assets/img/fuselage.svg);
+    top: -2vh;
+    right: 25vw;
+}
+
 
 
 
 /* Section 3 */
 
 #section3-4{
-    width: 200vw;
     min-height: 100vh;
-
+    width: 200vw;
     display: flex;
+    overflow: visible;
+
+    
 }
-
-
-
-
 
 #section3{
     min-height: 100vh;
@@ -176,7 +296,7 @@
   min-height: auto;      
   object-fit: contain; /*pour ne pas déformer l'image*/
   display: block;
-
+  z-index: 1;
   position: relative;
 }
 
@@ -197,6 +317,7 @@
 #terre__bottom{
     max-height: 50vh;
     width: 100vw;
+
     
     display: flex;
     justify-content: center;
@@ -222,10 +343,10 @@
     /*background-color: rgb(9, 152, 62);*/
     background-image: url(assets/img/avion-dessin.png);
     background-size: cover;
-    rotate: 90deg;
+    z-index: 3;
     
     min-height: 50px;
-    width: 50px;
+    width: 80px;
 }
 
 #new-york{
@@ -309,26 +430,15 @@
 
 
 .titre{
-    min-height: auto;
+    min-height: 5vh;
     width: 100%;
     /*border: solid black 1px;*/
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
+    color: var(--c-color-writting)
     }
 
-/* Section 5 */
-
-#section5{
-    min-height: 100vh;
-    width: 100vw;
-    background-color: rgb(164, 210, 241);
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
 .declin__texte{
     min-height: 40vh;
@@ -340,13 +450,124 @@
     align-items: flex-start;
     flex-direction: column;
     gap: 20px;
-    color: white;
+    color: var(--c-color-writting);
+}
+
+/* Section 5 */
+
+#section5{
+    min-height: 100vh;
+    width: 100vw;
+    background-color: var(--c-color-bg-intro);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.conclu__textes{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#section5, .conclu__textes, h2{
+    font-family: "Bebas Neue", sans-serif ;
+}
+
+#section5, .conclu__textes, p{
+    font-family: "TASA Orbiter", sans-serif;
+}
+
+#quizz{
+    min-height: 80%;
+    width: 90%;
+    background-color: rgb(226, 211, 43);
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.cartesEmbarquement{
+    min-height: 80vh;
+    width: 100vw;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    /*background-color: aquamarine;*/
+
+}
+
+.carteRep{
+    min-height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.rep{
+    min-height: 100%;
+    width: 5vw;
+    background-color: blueviolet;
+}
+
+.cartes{
+    min-height: auto;
+    width: 22vw;
+}
+
+.coupons{
+    min-height: 80vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    /*background-color: chartreuse;*/
+}
+
+.petitCoupon{
+    min-height: 100%;
+    width: 5vw;
+}
+
+
+/*Classe pour JS*/
+
+.valide{
+    filter: drop-shadow(0 0 2px rgb(0, 120, 14)) ;
+}
+
+.faux{
+    filter: drop-shadow(0 0 2px rgb(255, 0, 0)) ;
+}
+
+
+/* Animation */
+
+@keyframes descendre {
+0%, 100% {
+    transform: translateY(10px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes tourner {
+    0%, 100%{
+        transform: rotate(90deg);
+    }
 }
 
 
 
 
-/* Animation */
 
 /* Responsive */
 /*

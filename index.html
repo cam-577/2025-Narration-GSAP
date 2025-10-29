@@ -17,13 +17,47 @@
     
     <section id="section1">
 
+        <div >
+            <h2 id="intro__accroche">UN REVE SUPERSONIQUE</h2>
+        </div>
+
+        <div >
+            <h1 id="intro__titre">Le CONCORDE</h1>
+        </div>
+
+        <div >
+            <p id="intro__p">COMMENCER L'EXPLORATION</p>
+        </div>
+
+        <div id="fleche">
+            <img src="assets/img/double-arrow.svg" alt="flèche doucle vers le bas">
+        </div>
     </section>
     
     <section id="section2">
+
+        <div id="assemblage__texte">
+            <h1 id="assemblage__titre"> Une prouesse technologique</h1>
+            <p id="assemblage__descri" >Le Concorde est une merveille d’ingénierie. Grâce à son aile delta (en forme de triangle), il pouvait voler à Mach 2 ( soit plus de 2 000 km/h !) tout en restant stable et maniable. Il était conçu avec des matériaux capables de résister à des chaleurs intenses, car à Mach 2, le fuselage chauffe à 127 °C !  Son nez mobile permettait aux pilotes une visibilité optimale lors des décollages et atterrissages.  Lors de son premier vol en 1969, il incarnait déjà l’élégance et l’innovation à l’état pur, faisant du Concorde bien plus qu’un simple avion : une véritable icône de l’aviation.</p>
+        </div>
+
+        <div id="assemblage__maquette">
+        </div>
+
+        <div id="assemblage__elements">
+            <div class="element" id="nez"></div>
+            <div class="element" id="aileDroite"></div>
+            <div class="element" id="aileGauche"></div>
+            <div class="element" id="derive"></div>
+            <div class="element" id="moteurs" onclick="rotation()"></div>
+            <div class="element" id="queue"></div>
+            <div class="element" id="fuselage" onclick="turn()"> </div>
+        </div>
+
     </section>
 
-<div id="section3-4">
-    <secton id="section3">
+<section id="section3-4">
+    <div id="section3">
         <div id="terre__top">
             <div class="terre__altitude">
                 <div class="encadrement__altitude">
@@ -51,21 +85,27 @@
     </div>
 
 
-    <section id="section4">
+    <div id="section4">
 
         <div class="declin__diagramme">
             <div class="diagramme__barre" id="diagramme__barre1">
-                <div class="titre">Coût d'entretien</div>
+                <div class="titre">
+                    <p>Coût d'entretien</p>
+                </div>
                 <div id="barre1"></div>
             </div>
 
             <div class="diagramme__barre" id="diagramme__barre2">
-                <div class="titre">Prix du billet</div>
+                <div class="titre">
+                    <p>Prix du billet</p> 
+                </div>
                 <div id="barre2"></div>
             </div>
 
             <div class="diagramme__barre" id="diagramme__barre3">
-                <div class="titre">Nombre de passagers</div>
+                <div class="titre">
+                    <p>Nombre de passagers</p>
+                </div>
                 <div id="barre3"></div>
             </div>
 
@@ -77,37 +117,45 @@
         </div>
 
 
-    </section>
-</div>
+    </div>
+</section>
 
     <section id="section5">
-        <div id="empreintesMaison" class="disparition">
-                    <div class="empreintes">
-                        <div class="aDroite">
-                            <img class="patte" src="assets/img/patte.svg" alt="patte de chien">
-                        </div>
-                        <div class="aGauche">
-                            <img class="patte" src="assets/img/patte.svg" alt="patte de chien">
-                        </div>
-                        <div class="aDroite">
-                            <img class="patte" src="assets/img/patte.svg" alt="patte de chien">
-                        </div>
-                        <div class="aGauche">
-                            <img class="patte" src="assets/img/patte.svg" alt="patte de chien">
-                        </div>
-                        <div class="aDroite">
-                            <img class="patte" src="assets/img/patte.svg" alt="patte de chien">
-                        </div>
-                        <div class="aGauche">
-                            <img class="patte" src="assets/img/patte.svg" alt="patte de chien">
-                        </div>  
+        <div class="conclu__textes">
+            <h2>Faisons un petit test pour voir si tu as compris !</h2>
+            <p>Assemble les cartes d'embarquement en répondant aux question :</p>
+        </div>
 
-                    </div>
+        <div id="quizz">
+            <audio id="validationSound" >
+                <source src="assets/img/correct-356013.mp3" type="audio/mpeg" />
+                Votre nagigateur ne supporte pas l'audio
+            </audio>
 
-                    <div class="maison">
-                        <img src="assets/img/maison.svg" alt="maison">
-                    </div>
+            <div class="cartesEmbarquement">
+                <div class="carteRep">
+                    <img class="cartes" id="grandCoupon1" src="assets/img/1grandCoupon.png" alt="A bord du Concorde, en combien de temps pouviez-vous atteindre Paris, en partant de New-York ?">
+                    <div class="rep" id="carte1"></div>
+                    
                 </div>
+
+                <div class="carteRep">
+                    <img class="cartes" id="grandCoupon2" src="assets/img/2grandCoupon.png" alt="Quelle était la vitesse de croisière maximale du Concorde ? ">
+                    <div class="rep" id="carte2"></div>
+                </div>
+
+                <div class="carteRep">
+                    <img class="cartes" id="grandCoupon3" src="assets/img/3grandCoupon.png" alt="A quelle date s’est déroulé le crash du Concorde ?">
+                    <div class="rep" id="carte3"></div>
+                </div>
+            </div>
+
+            <div class="coupons">
+                <img class="petitCoupon" id="coupon2" src="assets/img/2petitCoupon.png" alt="2 179 km/h">
+                <img class="petitCoupon" id="coupon3" src="assets/img/3petitCoupon.png" alt="25 juillet 2000">
+                <img class="petitCoupon" id="coupon1" src="assets/img/1petitCoupon.png" alt="3h30">
+            </div>
+        </div>    
     </section>
 
 
