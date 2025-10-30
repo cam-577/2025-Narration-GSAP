@@ -10,12 +10,13 @@ let tlNuages = gsap.timeline({                                //tlNuage : nom de
   yoyo : true                                                 //yoyo : pour repartir en sens inverse
 })
 
-tlNuages.to('.nuage', {y: 5, stagger : 0.8, duration: 2, ease: "ease"})                  
-        .to('.nuage', {x: 7, stagger : 0.5, duration: 1.5, ease: "ease"})
-        .to('.nuage', {x: -3, stagger : 0.5, duration: 1.5, ease: "ease"})
-        .to('.nuage', {y: -6, stagger : 1, duration: 2, ease: "ease"})
-        .to('.nuage', {x: "random(-5, 5)", stagger : 0.2, duration: 3, ease: "ease"})          // (src : https://gsap.com/docs/v3/GSAP/Timeline/)
-        .to('.nuage', {y: 4, stagger : 0.5, duration: 1, ease: "ease", delay : 1})
+tlNuages.to('.nuage', {y: 8, stagger : 0.8, duration: 2, ease: "ease"})                  
+        .to('.nuage', {x: 10, stagger : 0.5, duration: 1.5, ease: "ease"})
+        .to('.nuage', {x: -6, stagger : 0.5, duration: 1.5, ease: "ease"})
+        .to('.nuage', {y: -12, stagger : 1, duration: 2, ease: "ease"})
+        .to('.nuage', {x: -4, stagger : 0.7, duration: 0.5, ease: "ease"})
+        .to('.nuage', {y: -6, stagger : 0.2, duration: 0.5, ease: "ease"})          
+        .to('.nuage', {y: 10, stagger : 0.5, duration: 1, ease: "ease", delay : 1})
                                 
 
 /*
@@ -89,7 +90,7 @@ gsap.to("#new-york", {
     trigger: '#section3-4',
     start: 'top top',
     end: "+=3000",
-    markers : true,
+    //markers : true,
     id:"trajet NY-Paris",
     toggleActions:'play none reverse reset',
     scrub:1,
@@ -179,17 +180,15 @@ function newHeight(){
 
 
 
-
-
-function turn(){
-  document.getElementsByClassName('element').element.classList.add(tourner);
-}
-
-
 /* Draggable - section 5 */
+
+const sonValide = document.getElementById('validationSound')
+sonValide.volume ='0.2'                                               //https://notes-de-cours.com/web/blogue/65/jouer-du-son-et-le-controler-en-javascript
 
 
 const zones = document.getElementsByClassName('rep');
+let valides = 0;
+
 
 
 Draggable.create(".petitCoupon",{
@@ -200,34 +199,69 @@ Draggable.create(".petitCoupon",{
 
   onDragEnd : function(){
     if (this.target.id === 'coupon1' && this.hitTest(carte1, "20")){                              // Ici, 'This' fait référence à l'object draggé (src: https://www.codeheroes.fr/2018/01/10/javascript-le-mot-cle-this/)
-      document.getElementById('coupon1').classList.remove ('faux'),
+      valides++,
       document.getElementById('grandCoupon1').classList.add ('valide'),   
       document.getElementById('coupon1').classList.add ('valide'), 
-      console.log('cest bien la 1');
+      console.log(valides);
+      bravo();
       sonValide.play();
 
     } else if (this.target.id === 'coupon2' && this.hitTest(carte2, "20")){
-        document.getElementById('coupon2').classList.remove ('faux'),
+        valides++,
         document.getElementById('grandCoupon2').classList.add ('valide'),   
         document.getElementById('coupon2').classList.add ('valide'), 
-        console.log('cest bien la 2');
+        console.log(valides);
+        bravo();
         sonValide.play();
         
     } else if (this.target.id === 'coupon3' && this.hitTest(carte3, "20")){
-        document.getElementById('coupon3').classList.remove ('faux'),
+        valides++,
         document.getElementById('grandCoupon3').classList.add ('valide'),   
         document.getElementById('coupon3').classList.add ('valide'), 
-        console.log('cest la 3');
+        console.log(valides);
+        bravo();
         sonValide.play();
-      }
 
-       else{
-        document.getElementById(this.target.id).classList.add ('faux')
+
+
+
+
+      }else if (this.target.id === 'coupon1' && this.hitTest(quizz, "20")){
+        valides--    
+        document.getElementById('grandCoupon1').classList.remove ('valide')
+        document.getElementById('coupon1').classList.remove ('valide')
+        console.log(valides);
+        bravo();
+
+      }else if (this.target.id === 'coupon2' && this.hitTest(quizz, "20")){
+        valides--
+        document.getElementById('grandCoupon2').classList.remove ('valide')
+        document.getElementById('coupon2').classList.remove ('valide')
+        console.log(valides);
+        bravo()
+
+      }else if (this.target.id === 'coupon3' && this.hitTest(quizz, "20")){
+        valides--
+        document.getElementById('grandCoupon3').classList.remove ('valide')
+        document.getElementById('coupon3').classList.remove ('valide')
+        console.log(valides);
+        bravo()
+
       }
 
   }
   
 })
 
-const sonValide = document.getElementById('validationSound')
-sonValide.volume ='0.2'                                               //https://notes-de-cours.com/web/blogue/65/jouer-du-son-et-le-controler-en-javascript
+
+
+/* Validation du quizz */
+
+function bravo(){
+  if (valides === 3) {
+    document.getElementById('bravoCard').style.opacity = 1;
+  } else
+    document.getElementById('bravoCard').style.opacity = 0;
+}
+
+/*Tourner */

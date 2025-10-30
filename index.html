@@ -46,7 +46,7 @@
 
         <div id="assemblage__elements">
             <div class="element" id="nez"></div>
-            <div class="element" id="aileDroite"></div>
+            <div class="element" id="aileDroite" onclick="tournerJS()"></div>
             <div class="element" id="aileGauche"></div>
             <div class="element" id="derive"></div>
             <div class="element" id="moteurs" onclick="rotation()"></div>
@@ -61,7 +61,7 @@
         <div id="terre__top">
             <div class="terre__altitude">
                 <div class="encadrement__altitude">
-                    <p id="altitude"> 0m </p>
+                    <p id="altitude"> Entré en service en 1976, le Concorde devient rapidement un symbole de luxe et de modernité. Seules Air France et British Airways l’exploitent, reliant des villes comme Paris et New York en 3 h 30, soit moins de la moitié du temps habituel ! </p>
                 </div>
             </div>
 
@@ -112,8 +112,8 @@
         </div>
 
         <div class="declin__texte">
-            <h1> Le declin</h1>
-            <p>Confiné à des liaisons survolant principalement les mers et océans, à cause du bang supersonique, peu apprécié des populations des villes et villages survolés, et exploité par deux compagnies seulement, l'appareil ne fut produit qu'à vingt exemplaires, dont six non commerciaux pour essais et mise au point. </p>
+            <h1 id="declin__h1"> Le declin</h1>
+            <p id="declin__p">Confiné à des liaisons survolant principalement les mers et océans, à cause du bang supersonique, peu apprécié des populations des villes et villages survolés, et exploité par deux compagnies seulement, l'appareil ne fut produit qu'à vingt exemplaires, dont six non commerciaux pour essais et mise au point. </p>
         </div>
 
 
@@ -123,7 +123,7 @@
     <section id="section5">
         <div class="conclu__textes">
             <h2>Faisons un petit test pour voir si tu as compris !</h2>
-            <p>Assemble les cartes d'embarquement en répondant aux question :</p>
+            <p>Assemble les cartes d'embarquement en répondant aux question, elles s'illuminent lorsque la réponse est bonne:</p>
         </div>
 
         <div id="quizz">
@@ -155,7 +155,15 @@
                 <img class="petitCoupon" id="coupon3" src="assets/img/3petitCoupon.png" alt="25 juillet 2000">
                 <img class="petitCoupon" id="coupon1" src="assets/img/1petitCoupon.png" alt="3h30">
             </div>
+
+            <div class="felicitation" id="bravoCard">
+                <h3 id="felicitation__titre">Bravo !</h3>
+                <p id="felicitation__p">Tu as réussi le test</p>
+            </div>
+
         </div>    
+
+        
     </section>
 
 

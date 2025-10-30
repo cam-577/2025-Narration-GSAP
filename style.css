@@ -9,8 +9,8 @@
 /* Variables */
 
 :root{
---c-color-bg-intro : rgb(77, 225, 255);
---c-color-bg-plan :  rgb(5, 53, 97);
+--c-color-bg-intro : #4de1ff;
+/*--c-color-bg-plan :  rgb(5, 53, 97);*/
 --c-color-bg-declin : rgb(6, 25, 41);
 --c-color-writting: rgb(255, 255, 255);
 
@@ -104,6 +104,7 @@ body{
     display: flex;
     justify-content: space-around;
     align-items: center;
+    position: relative;
 }
 
 #assemblage__texte{
@@ -145,8 +146,10 @@ body{
 #assemblage__elements{
     min-height: 90vh;
     width: 33vw;
-   /*background-color: brown;*/
-
+   background-color: var(--c-color-bg-declin);
+   border: 2px white solid;
+   border-radius: 30px;
+    
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -158,71 +161,73 @@ body{
 .element{
     background-size: contain;
     background-repeat: no-repeat;
-    position: absolute;
     filter: drop-shadow(0 0 2px rgb(0, 0, 0));
-
+    
+    position: absolute
 }
 
 #nez{
-    min-height: 101px;
-    width: 10.50px;
+    min-height: 25px;
+    width: 12px;
     background-image: url(assets/img/nez.svg);
-    top: -13vh;
-    right: -15vw;
+    top: 35vh;
+    right: 20vw;
 }
 
 #aileDroite{
-    min-height: 89.63px;
-    width: 319px;
+    min-height: 112px;
+    width:300px;
     background-image: url(assets/img/aileDroite.svg);
-    top: -30vh;
-    right: 50vh;
+    top: 60vh;
+    right: 12vh;
     rotate: 90deg;
+
     
 }
 
 #aileGauche{
-    min-height: 319px;
-    width: 200.63px;
+    min-height: 300px;
+    width: 112px;
     background-image: url(assets/img/aileGauche.svg);
-    top: 80vh;
-    right: -10vw;
-    background-color: aquamarine;
+    top: 8vh;
+    right: 25vw;
+
 }
 
 #derive{
-    min-height: 83px;
-    width: 88.77px;
+    min-height: 7px;
+    width: 130px;
     background-image: url(assets/img/derive.svg);
     rotate: 90deg;
-    top: -10vh;
+    top: 20vh;
+    right: 12vw;
 }
 
 #moteurs{
-    min-height: 191px;
-    width: 35px;
+    min-height: 135px;
+    width: 25px;
     background-image: url(assets/img/moteurs.svg);
-    top: 10vh;
-    right: 10vw;
+    top: 75vh;
+    right:29vw;
     rotate: -90deg;
     
 }
 
 #queue{
-    min-height: 105px;
-    width: 250.77px;
+    min-height: 31px;
+    width: 165px;
     background-image: url(assets/img/queue.svg);
-    top: 40vh;
-    right: 15vw;
+    top: 65vh;
+    right: 25vw;
     rotate: -90deg;
 }
 
 #fuselage{
     min-height: 410px;
-    width: 50px;
+    width: 34px;
     background-image: url(assets/img/fuselage.svg);
-    top: -2vh;
-    right: 25vw;
+    top: 7vh;
+    right: 10vw;
 }
 
 
@@ -270,7 +275,9 @@ body{
 }
 
 .encadrement__altitude{
-    border: solid black 1px;
+    border: solid white 2px;
+    border-radius: 30px;
+    background-color: var(--c-color-bg-declin);
 }
 
 
@@ -278,6 +285,7 @@ body{
 #altitude{
     font-family: "TASA Orbiter", sans-serif;
     padding: 10px 20px;
+    color: var(--c-color-writting);
 }
 
 
@@ -419,13 +427,13 @@ body{
 #barre2{
     min-height: 50%;
     width: 100%;
-    background-color: rgb(216, 55, 181);
+    background-color: #4de1ff;
 }
 
 #barre3{
     min-height: 25%;
     width: 100%;
-    background-color: rgb(216, 213, 55);
+    background-color: #fcfcd4;
 }
 
 
@@ -450,7 +458,16 @@ body{
     align-items: flex-start;
     flex-direction: column;
     gap: 20px;
+    
     color: var(--c-color-writting);
+}
+
+#declin__h1{
+    font-family: "Bebas Neue", sans-serif;
+}
+
+#declin__p{
+    font-family: "TASA Orbiter", sans-serif;
 }
 
 /* Section 5 */
@@ -484,7 +501,7 @@ body{
 #quizz{
     min-height: 80%;
     width: 90%;
-    background-color: rgb(226, 211, 43);
+    
 
     display: flex;
     justify-content: space-around;
@@ -498,7 +515,7 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    /*background-color: aquamarine;*/
+    /*background-color: aquamarine;*/   
 
 }
 
@@ -512,7 +529,7 @@ body{
 .rep{
     min-height: 100%;
     width: 5vw;
-    background-color: blueviolet;
+    border: #e7fdff dashed 2px;
 }
 
 .cartes{
@@ -522,12 +539,12 @@ body{
 
 .coupons{
     min-height: 80vh;
-    width: 100%;
+    width: 50vw;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    /*background-color: chartreuse;*/
+   /* background-color: chartreuse;*/
 }
 
 .petitCoupon{
@@ -536,14 +553,40 @@ body{
 }
 
 
+
+.felicitation{
+    min-height: 10vh;
+    width: 30vw;
+    background-color:#00a8d5;
+    opacity: 0;
+    position: relative;
+    right: 20vw;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    border-radius: 20px;
+    
+}
+
+#felicitation__titre{
+    font-family: "Bebas Neue", sans-serif;
+    color: #fcfcd4;
+}
+
+#felicitation__p{
+    font-family: "TASA Orbiter", sans-serif;
+    color: #fcfcd4;
+}
+
+
+
 /*Classe pour JS*/
 
 .valide{
-    filter: drop-shadow(0 0 2px rgb(0, 120, 14)) ;
-}
-
-.faux{
-    filter: drop-shadow(0 0 2px rgb(255, 0, 0)) ;
+    filter: drop-shadow(0 0 5px rgb(255, 255, 255)) ;
 }
 
 
@@ -559,11 +602,6 @@ body{
   }
 }
 
-@keyframes tourner {
-    0%, 100%{
-        transform: rotate(90deg);
-    }
-}
 
 
 
