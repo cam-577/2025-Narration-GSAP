@@ -46,12 +46,12 @@
 
         <div id="assemblage__elements">
             <div class="element" id="nez"></div>
-            <div class="element" id="aileDroite" onclick="tournerJS()"></div>
+            <div class="element" id="aileDroite"></div>
             <div class="element" id="aileGauche"></div>
             <div class="element" id="derive"></div>
-            <div class="element" id="moteurs" onclick="rotation()"></div>
+            <div class="element" id="moteurs"></div>
             <div class="element" id="queue"></div>
-            <div class="element" id="fuselage" onclick="turn()"> </div>
+            <div class="element" id="fuselage"> </div>
         </div>
 
     </section>
@@ -61,7 +61,8 @@
         <div id="terre__top">
             <div class="terre__altitude">
                 <div class="encadrement__altitude">
-                    <p id="altitude"> Entré en service en 1976, le Concorde devient rapidement un symbole de luxe et de modernité. Seules Air France et British Airways l’exploitent, reliant des villes comme Paris et New York en 3 h 30, soit moins de la moitié du temps habituel ! </p>
+                    <h1 id="titre__a">L’âge d’or (années 1976–1990)</h1>
+                    <p id="altitude__a"> Entré en service en 1976, le Concorde devient rapidement un symbole de luxe et de modernité. Seules Air France et British Airways l’exploitent, reliant des villes comme Paris et New York en 3 h 30, soit moins de la moitié du temps habituel ! </p>
                 </div>
             </div>
 
@@ -77,13 +78,12 @@
             <div class="infoTrajet">
                 <p>Paris - New York en 3h30 au lieu de 8h00 !</p>
             </div>
-            
             <div class="trajet__avion" id="new-york"></div>
-            <!--<div class="trajet__avion" id="paris"></div>-->
-
         </div>
+        
     </div>
 
+    
 
     <div id="section4">
 
@@ -92,21 +92,21 @@
                 <div class="titre">
                     <p>Coût d'entretien</p>
                 </div>
-                <div id="barre1"></div>
+                <div id="barre1" class="barres"></div>
             </div>
 
             <div class="diagramme__barre" id="diagramme__barre2">
                 <div class="titre">
                     <p>Prix du billet</p> 
                 </div>
-                <div id="barre2"></div>
+                <div id="barre2" class="barres"></div>
             </div>
 
             <div class="diagramme__barre" id="diagramme__barre3">
                 <div class="titre">
                     <p>Nombre de passagers</p>
                 </div>
-                <div id="barre3"></div>
+                <div id="barre3" class="barres"></div>
             </div>
 
         </div>
@@ -115,6 +115,8 @@
             <h1 id="declin__h1"> Le declin</h1>
             <p id="declin__p">Confiné à des liaisons survolant principalement les mers et océans, à cause du bang supersonique, peu apprécié des populations des villes et villages survolés, et exploité par deux compagnies seulement, l'appareil ne fut produit qu'à vingt exemplaires, dont six non commerciaux pour essais et mise au point. </p>
         </div>
+
+
 
 
     </div>
@@ -128,8 +130,8 @@
 
         <div id="quizz">
             <audio id="validationSound" >
-                <source src="assets/img/correct-356013.mp3" type="audio/mpeg" />
-                Votre nagigateur ne supporte pas l'audio
+                <source src="assets/img/correct-356013.mp3" type="audio/mpeg" />       <!-- src : https://www.youtube.com/watch?v=XSJj1uKF1RU-->
+                Votre nagigateur ne supporte pas l'audio                            
             </audio>
 
             <div class="cartesEmbarquement">

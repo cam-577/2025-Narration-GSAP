@@ -1,5 +1,5 @@
 
-/* Commune design */
+/* Commune design ********************************************************************************************************/
 *{
     margin: 0px;
     padding : 0px;
@@ -9,10 +9,17 @@
 /* Variables */
 
 :root{
---c-color-bg-intro : #4de1ff;
-/*--c-color-bg-plan :  rgb(5, 53, 97);*/
---c-color-bg-declin : rgb(6, 25, 41);
+--c-color-bg-intro :#4de1ff;
+--c-color-bg-plan :  #001566;
+--c-color-bg-declin : #74c48c;
 --c-color-writting: rgb(255, 255, 255);
+
+--f-font-title : "Bebas Neue", sans-serif;
+--f-font-text : "TASA Orbiter", sans-serif;
+
+--b-border : 2px white solid;
+--b-border-radius30 : 30px
+
 
 }
 
@@ -34,7 +41,7 @@
 
 
 
-/*Main design****************************************************/
+/* Main Design *********************************************************************************************************/
 
 body{
     overflow-x: hidden;
@@ -42,7 +49,7 @@ body{
 
 
 
-/* Section 1 */
+/* Section 1 *********************************************************/
 
 #section1{
     min-height: 100vh;
@@ -56,21 +63,20 @@ body{
 }
 
 #intro__accroche{
-    font-family:"TASA Orbiter", sans-serif;
-    color: var(--c-color-writting)
+    font-family:var(--f-font-text);
+    color: var(--c-color-writting);
 }
 
 #intro__titre{
-    font-family: "Bebas Neue", sans-serif;
+    font-family: var(--f-font-title);
     color: var(--c-color-writting);
-    font-size: 100px;
+    font-size: 15vh;
 
     margin-bottom: 20px;
 }
 
-
 #intro__p{
-    font-family: "TASA Orbiter", sans-serif;
+    font-family: var(--f-font-text);
     color: var(--c-color-writting);
     margin-bottom: 10px;
 }
@@ -84,21 +90,13 @@ body{
 
 
 
+/* Section 2 **********************************************************/
 
-
-
-
-
-
-
-
-
-/* Section 2 */
 
 #section2{
     min-height: 100vh;
     width: 100vw;
-    background-image: url(assets/img/blueprint.svg);
+    background-image: url(assets/img/fonds2.png);
     background-size: cover;
 
     display: flex;
@@ -108,25 +106,30 @@ body{
 }
 
 #assemblage__texte{
-    min-height : 50vh;
-    width: 30vw;
-    /*background-color: aqua;*/
+    min-height : 51vh;
+    width: 29.2vw;
+    background-color: var(--c-color-bg-plan);
+    border: #1c4dba 2px solid;
+    margin-bottom: 8px;
+    margin-left: 35px;
 
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
     gap: 10px;
+    padding: 20px;
 
     color: var(--c-color-writting);
+    
 }
 
 #assemblage__titre{
-    font-family: "Bebas Neue", sans-serif;
+    font-family: var(--f-font-title);
 }
 
 #assemblage__descri{
-    font-family: "TASA Orbiter", sans-serif; 
+    font-family: var(--f-font-text);
 }
 
 #assemblage__maquette{
@@ -138,25 +141,20 @@ body{
     justify-content: center;
     background-image: url(assets/img/Prototype.svg);
     background-size: contain;
-    margin:2px ;
 }
 
-
-
 #assemblage__elements{
-    min-height: 90vh;
-    width: 33vw;
-   background-color: var(--c-color-bg-declin);
-   border: 2px white solid;
-   border-radius: 30px;
+    min-height: 78.5vh;
+    width: 31.5vw;
+    background-color: var(--c-color-bg-plan);
+    border: #1c4dba 2px solid;
+    margin-right: 36px;
+   margin-bottom: 8px;
     
     display: flex;
     justify-content: space-around;
     align-items: center;
-
-
 }
-
 
 .element{
     background-size: contain;
@@ -179,19 +177,16 @@ body{
     width:300px;
     background-image: url(assets/img/aileDroite.svg);
     top: 60vh;
-    right: 12vh;
+    right: 15vh;
     rotate: 90deg;
-
-    
 }
 
 #aileGauche{
     min-height: 300px;
     width: 112px;
     background-image: url(assets/img/aileGauche.svg);
-    top: 8vh;
+    top: 13vh;
     right: 25vw;
-
 }
 
 #derive{
@@ -210,7 +205,6 @@ body{
     top: 75vh;
     right:29vw;
     rotate: -90deg;
-    
 }
 
 #queue{
@@ -226,22 +220,22 @@ body{
     min-height: 410px;
     width: 34px;
     background-image: url(assets/img/fuselage.svg);
-    top: 7vh;
+    top: 13vh;
     right: 10vw;
 }
 
 
 
 
-/* Section 3 */
+/* Section 3 ***********************************************************/
+
 
 #section3-4{
     min-height: 100vh;
     width: 200vw;
     display: flex;
     overflow: visible;
-
-    
+    position: relative;
 }
 
 #section3{
@@ -251,9 +245,7 @@ body{
 
     display: flex;
     flex-direction: column;
-
-    overflow: hidden;
-
+    overflow: visible;
 }
 
 #terre__top{
@@ -266,32 +258,37 @@ body{
 
 .terre__altitude{
     min-height: 100%;
-    width: 10%;
+    width: 40%;
     display: flex;
-
+    
     align-items: flex-start;
     margin: 10px;
-
 }
 
 .encadrement__altitude{
     border: solid white 2px;
-    border-radius: 30px;
+    border-radius: var(--b-border-radius30);
     background-color: var(--c-color-bg-declin);
+
+    padding: 10px;
+    margin-top: 20px;
+    margin-left: 20px;
 }
 
+#titre__a{
+    font-family: var(--f-font-title);
+    color: var(--c-color-writting);
+}
 
-
-#altitude{
-    font-family: "TASA Orbiter", sans-serif;
+#altitude__a{
+    font-family: var(--f-font-text);
     padding: 10px 20px;
     color: var(--c-color-writting);
 }
 
-
 .terre__nuage{
     min-height: 100%;
-    width: 90%;
+    width: 60%;
 
     display: flex;
     justify-content: space-around;
@@ -302,37 +299,33 @@ body{
 .nuage {
   width: 200px;      
   min-height: auto;      
-  object-fit: contain; /*pour ne pas déformer l'image*/
+  object-fit: contain;
   display: block;
-  z-index: 1;
+  z-index: 80;
   position: relative;
 }
 
 #nuageGauche{
-    top: 200px;
-    left: -6px;
-
-    width: 150px;
+    top: 26vh;
+    left: -25vw;
+    width: 11vw;
 }
 
 #nuageDroite{
-    top: -10px;
-    left: -80px;
-    width: 300px;
-
+    top: -1vh;
+    left: -15vw;
+    width: 17vw;
 }
 
 #terre__bottom{
     max-height: 50vh;
     width: 100vw;
-
     
     display: flex;
     justify-content: center;
     align-items: center;
 
     object-fit:cover;
-
 }
 
 #Terre3D{
@@ -343,37 +336,36 @@ body{
 }
 
 .infoTrajet{
-    display: none;
-}
-
-.trajet__avion {
-    position: relative;
-    /*background-color: rgb(9, 152, 62);*/
-    background-image: url(assets/img/avion-dessin.png);
-    background-size: cover;
-    z-index: 3;
+    display: flex; 
     
-    min-height: 50px;
-    width: 80px;
+    background-color: var(--c-color-bg-declin);
+    font-family: var(--f-font-text);
+    color: var(--c-color-writting);
+    position:absolute;
+    right: 20%;
+    z-index: 50;
+    padding: 5px 10px 5px 10px;
+    border-radius: 30px 30px 30px 0px;
 }
 
 #new-york{
-    top : 85px;
-    left: -405px;
-    z-index: 2;
-
+    background-image: url(assets/img/avion-dessin.png);
+    top: 17%;
+    right: 24% ;
 }
 
-#paris{
-    top : 72px;
-    left: -222px;
+.trajet__avion{
+    min-height: 50px;
+    width: 80px;
+    z-index: 30;
 
-
+    background-size: cover;
+    position: relative;
 }
 
 
 
-/* Section 4 */
+/* Section 4 ***********************************************************/
 
 #section4{
     min-height: 100vh;
@@ -388,22 +380,19 @@ body{
 .declin__diagramme{
     min-height: 100vh;
     width: 40%;
-    /*background-color: rgb(65, 65, 65);*/
+    overflow-y: visible;
 
     display: flex;
     justify-content: space-around;
-
 }
 
 .diagramme__barre{
-
     width: 10%;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
     gap: 20px;
-    /*background-color: rgb(168, 164, 233);*/
 }
 
 #diagramme__barre1{
@@ -418,16 +407,21 @@ body{
     min-height: 20vh;
 }
 
+.barres{
+    position: relative;
+    /*top: 80vh;*/
+}
+
 #barre1{
     min-height: 80%;
     width: 100%;
-    background-color: rgb(98, 55, 216);
+    background-color: var(--c-color-bg-plan);
 }
 
 #barre2{
     min-height: 50%;
     width: 100%;
-    background-color: #4de1ff;
+    background-color: var(--c-color-bg-intro);
 }
 
 #barre3{
@@ -436,17 +430,14 @@ body{
     background-color: #fcfcd4;
 }
 
-
 .titre{
     min-height: 5vh;
     width: 100%;
-    /*border: solid black 1px;*/
     display: flex;
     justify-content: center;
     align-items: center;
     color: var(--c-color-writting)
     }
-
 
 .declin__texte{
     min-height: 40vh;
@@ -463,14 +454,14 @@ body{
 }
 
 #declin__h1{
-    font-family: "Bebas Neue", sans-serif;
+    font-family: var(--f-font-title);
 }
 
 #declin__p{
-    font-family: "TASA Orbiter", sans-serif;
+    font-family: var(--f-font-text);
 }
 
-/* Section 5 */
+/* Section 5 ***********************************************************/
 
 #section5{
     min-height: 100vh;
@@ -491,17 +482,18 @@ body{
 }
 
 #section5, .conclu__textes, h2{
-    font-family: "Bebas Neue", sans-serif ;
+    font-family: var(--f-font-title);
+    color: var(--c-color-writting);
 }
 
 #section5, .conclu__textes, p{
-    font-family: "TASA Orbiter", sans-serif;
+    font-family: var(--f-font-text);
+    color: var(--c-color-writting);
 }
 
 #quizz{
     min-height: 80%;
     width: 90%;
-    
 
     display: flex;
     justify-content: space-around;
@@ -515,8 +507,6 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    /*background-color: aquamarine;*/   
-
 }
 
 .carteRep{
@@ -530,6 +520,7 @@ body{
     min-height: 100%;
     width: 5vw;
     border: #e7fdff dashed 2px;
+    border-radius: 0px  20px 20px 0px ;
 }
 
 .cartes{
@@ -544,7 +535,6 @@ body{
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-   /* background-color: chartreuse;*/
 }
 
 .petitCoupon{
@@ -552,12 +542,11 @@ body{
     width: 5vw;
 }
 
-
-
 .felicitation{
     min-height: 10vh;
     width: 30vw;
-    background-color:#00a8d5;
+    background-color: var(--c-color-bg-declin);
+    border: var(--b-border);
     opacity: 0;
     position: relative;
     right: 20vw;
@@ -568,29 +557,33 @@ body{
     flex-direction: column;
 
     border-radius: 20px;
-    
 }
 
 #felicitation__titre{
-    font-family: "Bebas Neue", sans-serif;
-    color: #fcfcd4;
+    font-family: var(--f-font-title);
+    color: var(--c-color-writting)
 }
 
 #felicitation__p{
-    font-family: "TASA Orbiter", sans-serif;
-    color: #fcfcd4;
+    font-family: var(--f-font-text);
+    color: var(--c-color-writting);
 }
 
 
+/* Mouvements ***********************************************************************************************************/
 
-/*Classe pour JS*/
+/*Classes pour JS*/
 
 .valide{
     filter: drop-shadow(0 0 5px rgb(255, 255, 255)) ;
 }
 
+.monter{
+    animation: monter 3s ease-out forwards;
+}
 
-/* Animation */
+
+/* Animations */
 
 @keyframes descendre {
 0%, 100% {
@@ -602,10 +595,12 @@ body{
   }
 }
 
-
-
-
-
+@keyframes monter {
+    0%, 100%{
+        transform: translateY(-80vh);
+    }
+    
+}
 
 /* Responsive */
 /*
