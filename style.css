@@ -3,7 +3,6 @@
 *{
     margin: 0px;
     padding : 0px;
-    font-family: Arial, Helvetica, sans-serif;
 }
 
 /* Variables */
@@ -71,8 +70,13 @@ body{
     font-family: var(--f-font-title);
     color: var(--c-color-writting);
     font-size: 15vh;
-
+    transition-duration: 0.5s;
     margin-bottom: 20px;
+}
+
+#intro__titre:hover {
+    color: var(--c-color-bg-plan);
+   
 }
 
 #intro__p{
@@ -84,7 +88,6 @@ body{
 #fleche{
     position: relative;
     top: 20px;
-    animation: descendre 2s ease-out infinite;
 }
 
 
@@ -101,6 +104,7 @@ body{
 
     display: flex;
     justify-content: space-around;
+    flex-direction: row;
     align-items: center;
     position: relative;
 }
@@ -270,7 +274,7 @@ body{
     border-radius: var(--b-border-radius30);
     background-color: var(--c-color-bg-declin);
 
-    padding: 10px;
+    padding: 20px 25px;
     margin-top: 20px;
     margin-left: 20px;
 }
@@ -282,7 +286,7 @@ body{
 
 #altitude__a{
     font-family: var(--f-font-text);
-    padding: 10px 20px;
+    
     color: var(--c-color-writting);
 }
 
@@ -425,7 +429,7 @@ body{
 }
 
 #barre3{
-    min-height: 25%;
+    min-height: 15%;
     width: 100%;
     background-color: #fcfcd4;
 }
@@ -434,9 +438,10 @@ body{
     min-height: 5vh;
     width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-    color: var(--c-color-writting)
+    color: var(--c-color-writting);
+    font-family: var(--f-font-text);
     }
 
 .declin__texte{
@@ -470,23 +475,27 @@ body{
 
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
 }
 
 .conclu__textes{
     display: flex;
+    min-height: 10vh;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
+    
+    margin-top: 20px;
 }
 
-#section5, .conclu__textes, h2{
+#section5 .conclu__textes h2{
     font-family: var(--f-font-title);
     color: var(--c-color-writting);
+    font-size:40px;
 }
 
-#section5, .conclu__textes, p{
+#section5 .conclu__textes p{
     font-family: var(--f-font-text);
     color: var(--c-color-writting);
 }
@@ -498,6 +507,7 @@ body{
     display: flex;
     justify-content: space-around;
     align-items: center;
+    margin-bottom: 30px;
 }
 
 .cartesEmbarquement{
@@ -575,38 +585,18 @@ body{
 /*Classes pour JS*/
 
 .valide{
-    filter: drop-shadow(0 0 5px rgb(255, 255, 255)) ;
+    filter: drop-shadow(0 0 10px rgb(255, 255, 255)) ;
 }
 
-.monter{
-    animation: monter 3s ease-out forwards;
+.up{
+    animation: monter 2s ease-out forwards;
 }
 
-
-/* Animations */
-
-@keyframes descendre {
-0%, 100% {
-    transform: translateY(10px);
-  }
-
-  50% {
-    transform: translateY(-10px);
-  }
-}
-
-@keyframes monter {
-    0%, 100%{
-        transform: translateY(-80vh);
-    }
-    
-}
 
 /* Responsive */
-/*
+
 @media (max-width:800px){
-    .maison{
-        width: 100px;
+    #section2{
+        flex-direction: column;
     }
 }
-*/

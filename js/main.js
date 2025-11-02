@@ -56,7 +56,7 @@ gsap.to("#new-york", {                // création d'un gsap.to pour changer l'e
 
 /* GSAP.to / ScrollTrigger - Section3-4 : Scroll horizotal */
 
-const sections = gsap.utils.toArray("#section3-4 > div");   // prendre tous les élément <div> de la #section3-4, et les mettres en tableau (src : Julien Saouas et Fiora Meloni)
+const sections = gsap.utils.toArray("#section3-4 > div");   // prendre tous les élément <div> de la #section3-4, et les mettres en tableau (src : Julien Saouas et Fiora Meloni https://m.youtube.com/watch?v=QlApLiVlLAw )
 
 gsap.to(sections, {                    // création d'un gsap.to pour changer l'emplacement d'un élément, ici la constante 'sections'.
   
@@ -154,7 +154,8 @@ function bravo(){                                                  // initialisa
 
 
 
-/*Responsive */
+
+/*Responsive ****************************************/
 
 /* matchMedia */
 
@@ -165,33 +166,18 @@ mm.add ({                                                          // définitio
   isDesktop : "(min-width: 800px)",                                // 2 conditions sont créées
 }, (contexte) => {                                                 // choisit automatiquement laquelle de scondition est vrai pour chaque animation mise en-dessous
   let { isMobile, isDesktop } = contexte.conditions;               // si la largeur est plus gronde ou égale à 800px, on est en desktop et si la largeur est plus petite ou égale à 799px, on est en mobile
+
+  /* GSAP.to - section1 : flèche*/
+
+gsap.to('#fleche', {                // on met en mouvement #flèche
+  y : isMobile? 10 : 30,            // si on est en mobile y:10, sinon y:30
+  ease : 'sine.in',                 // animation du défilement (src : https://gsap.com/docs/v3/Eases/)
+  duration :0.5,                    // l'animation dur 0.5s
+  repeat : -1,                      // infini
+  yoyo : true                       // l'animation fait l'aller-retour
 })
 
-
-
-
-/*
-let mm = gsap.matchMedia();
-
-mm.add({
-  isMobile:"(max-width:799px)",
-  isDesktop:"(min-width:800px)",
-}, (context)=> {
-    let { isMobile, isDesktop } = context.conditions;
-
-    tl.to('.patte',{x: isMobile ? 30 : 100, stagger: 0.1,})
-    .to('.patte',{y: isMobile ? 30 : 100, stagger: 0.1,})
-    .to('.patte',{x: isMobile ? -30 : -100, stagger: 0.1,})
-    .to('.patte',{y: isMobile ? -30 : 0, opacity : 0, stagger: 0.1,})   
-
 })
-
-*/
-
-
-
-
-
 
 
 /* ESSAIS - NE FONCTIONNENT PAS ****************************************************************************************************************************************
@@ -229,43 +215,5 @@ function newHeight(){
   console.log('la taille est de '+ heightB/(996.24/ref) + 'px' );
 }
 
-
-
-
-
-
-
-OBJECTIF : faire tourner de 90 degré les .element chaque fois que je clique dessus.
-
-
-function rotation(){
-  document.getElementsByClassName('element').transform.rotate(90)
-}
-
-
-
-
-
-// Mouvement barre section 4 
-
-
-tlNuages.to('#barre1', {y: -600, stagger : 0.5, duration: 1, ease: "ease"})        //tlBarres : nom de ma timeline          
-        .to('#barre2', {y: -500, stagger : 0.5, duration: 1, ease: "ease"})
-        .to('#barre3', {y: -600, stagger : 0.5, duration: 1, ease: "ease"})
-
-
-let tlBarres = gsap.timeline({              
-  repeat : 1,                                               //tourne en boucle, sinon on peut mettre un chiffre qui correspond au nombre de répétitions
-  yoyo : false,                                             //yoyo : pour repartir en sens inverse
-    scrollTrigger:{
-      trigger : "#section3-4", 
-      markers : true, 
-      start : "top 40%",
-      end :"top 0%",
-      id : "tBarres",
-      toggleActions : "play none none none"                 // qu'est ce que je fait quand je passe start, none tjrs, se rejout à l'inverse quand je remonte, se reset quand je quitte la section.
-    }
-
-})
 
 */
